@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuperHeroes } from '../../actions/heoresActions';
 import RenderList from '../RenderList/RenderList';
+import { ImageWrapper } from './styles';
 
 const ImageGrid = () => {
   const storeHeroes = useSelector((state) => state.heroes);
@@ -12,12 +13,14 @@ const ImageGrid = () => {
   }, []);
 
   return (
-    <FlatList
-      numColumns={2}
-      data={storeHeroes.heroes}
-      renderItem={RenderList}
-      keyExtractor={(item) => item.id}
-    />
+    <ImageWrapper>
+      <FlatList
+        numColumns={2}
+        data={storeHeroes.heroes}
+        renderItem={RenderList}
+        keyExtractor={(item) => item.id}
+      />
+    </ImageWrapper>
   );
 };
 

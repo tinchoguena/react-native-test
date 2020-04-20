@@ -1,7 +1,5 @@
-import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
-
-const { width } = Dimensions.get('window');
+import { LinearGradient } from 'expo-linear-gradient';
 
 const GridItem = styled.View`
   background-color: white;
@@ -11,35 +9,51 @@ const GridItem = styled.View`
 `;
 
 const ItemImage = styled.ImageBackground`
-  width: ${width * 0.46}px;
-  height: ${width * 0.6}px;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin: 8px;
+  height: 218.12px;
+  width: 164px;
+  text-shadow-color: rgba(0, 0, 0, 0.3);
+  shadow-opacity: 0.3;
+  text-shadow-radius: 12px;
+  margin: 16px;
+`;
+
+const Gradient = styled(LinearGradient)`
+  border-radius: 8px;
 `;
 
 const ItemTitle = styled.Text`
-  font-size: 22px;
+  font-size: 17px;
+  width: 137px;
+  height: 20px;
   font-weight: 800;
   color: white;
-  margin: 2px;
-  padding-left: 10px;
-  text-shadow-color: rgba(0, 0, 0, 1.5);
-  text-shadow-offset: {width: -1, height: 1};
-  text-shadow-radius: 10px;
+  margin-top: 148.56px;
+  margin-bottom: 3px;
+  padding-left: 14.5px;
+  padding-right: 12.5px;
+  text-shadow-color: rgba(0, 0, 0, 5);
+  shadow-opacity: 0.2;
+  text-shadow-radius: 4px;
+`;
+
+// this height is modified by 2px so the text can fit.
+
+const SubTitleWrapper = styled.View`
+  margin-top: 0px;
+  margin-bottom: 14.56px;
+  margin-left: 14.5px;
+  width: 137px;
+  height: 34px;
 `;
 
 const ItemSubTitle = styled.Text`
-  justify-content: flex-end;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 14px;
   color: white;
-  margin: 1px;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  text-shadow-color: rgba(0, 0, 0, 0.75);
-  text-shadow-offset: {width: -2, height: 2};
-  text-shadow-radius: 10px;
+  text-shadow-color: rgba(0, 0, 0, 0.5);
+  shadow-opacity: 0.2;
+  text-shadow-radius: 4px;
+  padding: 0px;
+  margin: 0px;
 `;
 
-export { GridItem, ItemImage, ItemTitle, ItemSubTitle };
+export { GridItem, ItemImage, ItemTitle, SubTitleWrapper, Gradient, ItemSubTitle };
