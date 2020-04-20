@@ -7,6 +7,7 @@
 * evaluate management of external libraries ~ specifically: Redux and api client
 * evaluate basic terminal and git skills
 * evaluate handling queries to an api
+* evaluate front-end skills
 * object handling
 
 ## Instalation Guide ##
