@@ -30,17 +30,20 @@ export const fetchSuperHeroes = () => {
         fetch(`https://dev.consultr.net/superhero.json`)
             .then((response) => response.json())
             .then((superHeroesObj) => {
-                const superHeroesArr = superHeroesObj.map(hero => {
-                    return {
-                        id: hero.id,
-                        name: hero.name,
-                        img: hero.images.sm,
-                        height: hero.appearance.height[1],
-                        weight: hero.appearance.weight[1]
-                    };
-                });
+                const superHeroesArr = superHeroesObj.map(hero => ({
+                    id: hero.id,
+                    name: hero.name,
+                    img: hero.images.sm,
+                    height: hero.appearance.height[1],
+                    weight: hero.appearance.weight[1]
+                }));
                 dispatch(fetchHeroesSuccess(superHeroesArr));
             })
-            .catch(() => console.log('error on the action creator'));
+            .catch(() => {
+                if (__DEV__) {
+                    console.log('error fetching super heros endpoint');
+                }
+                dispatch(fetchHeroesError(error))
+            });
     };
 };

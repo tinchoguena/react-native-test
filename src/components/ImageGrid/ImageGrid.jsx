@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Text, View, ScrollView, FlatList, Image } from 'react-native';
+import { FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSuperHeroes } from '../../actions/heoresActions';
 import RenderList from '../RenderList/RenderList';
@@ -10,16 +10,14 @@ const ImageGrid = () => {
   useEffect(() => {
     dispatch(fetchSuperHeroes());
   }, []);
-  console.log('%%%%%%%%%% Super Heroes on store todo bien', storeHeroes.heroes);
+
   return (
-    <View>
-      <FlatList
-        numColumns={2}
-        data={storeHeroes.heroes}
-        renderItem={RenderList}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+    <FlatList
+      numColumns={2}
+      data={storeHeroes.heroes}
+      renderItem={RenderList}
+      keyExtractor={(item) => item.id}
+    />
   );
 };
 
