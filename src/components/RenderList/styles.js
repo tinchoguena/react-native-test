@@ -1,13 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const GridItem = styled.View`
-  background-color: white;
-  border-radius: 20px;
-  margin: 5px;
-  padding: 5px;
-`;
-
 const ItemImage = styled.ImageBackground`
   height: 218.12px;
   width: 164px;
@@ -22,10 +15,10 @@ const Gradient = styled(LinearGradient)`
 `;
 
 const ItemTitle = styled.Text`
+  font-family: SFProDisplay-Bolt;
   font-size: 17px;
   width: 137px;
   height: 20px;
-  font-weight: 800;
   color: white;
   margin-top: 148.56px;
   margin-bottom: 3px;
@@ -47,6 +40,7 @@ const SubTitleWrapper = styled.View`
 `;
 
 const ItemSubTitle = styled.Text`
+  font-family: SFProDisplay-Light;
   font-size: 14px;
   color: white;
   text-shadow-color: rgba(0, 0, 0, 0.5);
@@ -56,4 +50,4 @@ const ItemSubTitle = styled.Text`
   margin: 0px;
 `;
 
-export { GridItem, ItemImage, ItemTitle, SubTitleWrapper, Gradient, ItemSubTitle };
+export { ItemImage, ItemTitle, SubTitleWrapper, Gradient, ItemSubTitle };
