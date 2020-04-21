@@ -10,7 +10,7 @@ const renderList = (itemData) => {
         source={{ uri: itemData.item.img }}
         imageStyle={{ borderRadius: 8 }}
       >
-        <Gradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.82)']}>
+        <Gradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.82)']} start={[0.0, 0.0]} end={[1, 1]}>
           <ItemTitle key={itemData.item.name}>{itemData.item.name}</ItemTitle>
           <SubTitleWrapper>
             <ItemSubTitle

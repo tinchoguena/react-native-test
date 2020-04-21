@@ -6,8 +6,11 @@ const ItemImage = styled.ImageBackground`
   width: 164px;
   text-shadow-color: rgba(0, 0, 0, 0.3);
   shadow-opacity: 0.3;
-  text-shadow-radius: 12px;
-  margin: 16px;
+  text-shadow-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
 `;
 
 const Gradient = styled(LinearGradient)`
